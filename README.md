@@ -10,7 +10,7 @@ Auditoria automatizada de Segregação de Funções (SoD) utilizando SQL e SQLit
 - SQLite (Linguagem de gerenciamento)
 
 **Processo investigativo:** 
-- **Modelagem de dados:** Criação das tabelas "usuários" e "permisoes_usuarios" simulando um ambiente real.
+- **Modelagem de dados:** Criação das tabelas "usuários" e "permissoes_usuarios" simulando um ambiente real.
 - **Alimentação da base:** Inserção de dados fictícios representando o RH e a matriz de acessos sistêmicos.
 - **Execução do teste (Query):** Criação de um script que utiliza JOIN para cruzar a base de dados de usuários com seus privilégios, filtrando especificamente as funções de CADASTRAR_FORNECEDOR e APROVAR_PAGAMENTO.
 - **Identificação da exceção:** Uso das funções GROUP_CONCAT  e HAVING_COUNT > 1 para isolar e apontar apenas os perfis que possuem ambos os acessos conflitantes.
