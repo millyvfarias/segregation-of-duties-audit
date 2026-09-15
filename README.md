@@ -10,15 +10,15 @@ Auditoria automatizada de Segregação de Funções (SoD) utilizando SQL e SQLit
 - SQLite (Linguagem de gerenciamento)
 
 **Processo investigativo:** 
-**Modelagem de dados:** Criação das tabelas "usuários" e "permisoes_usuarios" simulando um ambiente real.
-**Alimentação da base:** Inserção de dados fictícios representando o RH e a matriz de acessos sistêmicos.
-**Execução do teste (Query):** Criação de um script que utiliza JOIN para cruzar a base de dados de usuários com seus privilégios, filtrando especificamente as funções de CADASTRAR_FORNECEDOR e APROVAR_PAGAMENTO.
-**Identificação da exceção:** Uso das funções GROUP_CONCAT  e HAVING_COUNT > 1 para isolar e apontar apenas os perfis que possuem ambos os acessos conflitantes.
+- **Modelagem de dados:** Criação das tabelas "usuários" e "permisoes_usuarios" simulando um ambiente real.
+- **Alimentação da base:** Inserção de dados fictícios representando o RH e a matriz de acessos sistêmicos.
+- **Execução do teste (Query):** Criação de um script que utiliza JOIN para cruzar a base de dados de usuários com seus privilégios, filtrando especificamente as funções de CADASTRAR_FORNECEDOR e APROVAR_PAGAMENTO.
+- **Identificação da exceção:** Uso das funções GROUP_CONCAT  e HAVING_COUNT > 1 para isolar e apontar apenas os perfis que possuem ambos os acessos conflitantes.
 
 **Achado (evidência):**
-**Evidência e condição:** Foi identificado que duas colaboradoras possuem cadastro ativo para cadastrar fornecedores e aprovar pagamentos simultaneamente.
-**Causa:** Ausência de um controle preventivo no sistema que bloqueie a concessão de perfis conflitantes para a mesma pessoa, ou falha na matriz de acessos durante a aprovação do perfil.
-**Risco:** Alto. A falha expõe a empresa a fraudes internas, perdas financeiras (pagamentos para fornecedores fantasmas) e risco na imagem durante auditorias externas.
+- **Evidência e condição:** Foi identificado que duas colaboradoras possuem cadastro ativo para cadastrar fornecedores e aprovar pagamentos simultaneamente.
+- **Causa:** Ausência de um controle preventivo no sistema que bloqueie a concessão de perfis conflitantes para a mesma pessoa, ou falha na matriz de acessos durante a aprovação do perfil.
+- **Risco:** Alto. A falha expõe a empresa a fraudes internas, perdas financeiras (pagamentos para fornecedores fantasmas) e risco na imagem durante auditorias externas.
 
 **Plano de Ação (recomendado):** 
 1. **Ação imediata:** Verificar o acesso que de fato corresponde a cada uma e revogar o excedente.
